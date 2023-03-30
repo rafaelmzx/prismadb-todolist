@@ -1,0 +1,31 @@
+
+
+GET http://localhost:3333
+
+
+###
+POST http://localhost:3333/task/create
+content-Type: application/json
+
+{
+    "name": "teste1"
+}
+
+###
+
+DELETE http://localhost:3333/task/1
+
+###
+
+PUT http://localhost:3333/client/1
+content-Type: application/json
+
+{
+    "name": "teste4",
+    "email": "testeupdate@gmail.com",
+    "CPF": "000.000.000-03",
+    "CEP": "98960006",
+    "numberPhone": "55 01234-5679"
+}
+
+###
