@@ -1,11 +1,15 @@
 import { PrismaClient } from "@prisma/client";
 import express from "express";
 
+var cors = require('cors')
+
 const app = express()
 
 const prisma = new PrismaClient
 
 app.use(express.json())
+
+app.use(cors())
 
 const port = 3333
 
@@ -20,8 +24,12 @@ app.get("/task/", async (req, res) => {
 // ------- CRIA A TAREFA  --------
 
 app.post("/task/create", async (request, response) =>{
+
+    console.log('entrei na rota')
             
     const { name } = request.body
+
+    console.log(request.body)
         
     const taskCreate = await prisma.task.create({
         data:{
